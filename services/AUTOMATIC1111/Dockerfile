@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM alpine/git:2.36.2 as download
+FROM alpine/git:2.36.2@sha256:ec491c893597b68c92b88023827faa771772cfd5e106b76c713fa5e1c75dea84 as download
 
 SHELL ["/bin/sh", "-ceuxo", "pipefail"]
 
