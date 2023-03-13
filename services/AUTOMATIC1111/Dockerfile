@@ -24,7 +24,7 @@ RUN . /clone.sh k-diffusion https://github.com/crowsonkb/k-diffusion.git 5b3af03
 RUN . /clone.sh clip-interrogator https://github.com/pharmapsychotic/clip-interrogator 2486589f24165c8e3b303f84e9dbbea318df83e8
 
 
-FROM alpine:3.17 as xformers
+FROM alpine:3.17@sha256:ff6bdca1701f3a8a67e328815ff2346b0e4067d32ec36b7992c1fdc001dc8517 as xformers
 RUN apk add --no-cache aria2
 RUN aria2c -x 5 --dir / --out wheel.whl 'https://github.com/AbdBarho/stable-diffusion-webui-docker/releases/download/4.1.0/xformers-0.0.16.dev421-cp310-cp310-manylinux2014_x86_64.whl'
 
