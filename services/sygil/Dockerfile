@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.8-slim
+FROM python:3.8-slim@sha256:af8591283006a225c5e0a621f717a00069d9a0f9423080376f3f45b751eb0232
 
 SHELL ["/bin/bash", "-ceuxo", "pipefail"]
 
