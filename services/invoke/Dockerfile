@@ -1,12 +1,12 @@
 # syntax=docker/dockerfile:1
 
-FROM alpine:3.17 as xformers
+FROM alpine:3.17@sha256:ff6bdca1701f3a8a67e328815ff2346b0e4067d32ec36b7992c1fdc001dc8517 as xformers
 RUN apk add --no-cache aria2
 RUN aria2c -x 5 --dir / --out wheel.whl 'https://github.com/AbdBarho/stable-diffusion-webui-docker/releases/download/4.1.0/xformers-0.0.16.dev421-cp310-cp310-manylinux2014_x86_64.whl'
 
 
 
-FROM python:3.10-slim
+FROM python:3.10-slim@sha256:e4e3a6648a564bd67b149dff432c85911118c5892bb0ec121e33743dbcbe3ff1
 SHELL ["/bin/bash", "-ceuxo", "pipefail"]
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_EXISTS_ACTION=w  PIP_PREFER_BINARY=1
