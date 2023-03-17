@@ -6,7 +6,7 @@ RUN aria2c -x 5 --dir / --out wheel.whl 'https://github.com/AbdBarho/stable-diff
 
 
 
-FROM python:3.10-slim
+FROM python:3.10-slim@sha256:c35f011718a64510d819052464072753cfe20eb9b19e34c0f10cba04f6d1c9f8
 SHELL ["/bin/bash", "-ceuxo", "pipefail"]
 
 ENV DEBIAN_FRONTEND=noninteractive PIP_EXISTS_ACTION=w  PIP_PREFER_BINARY=1
